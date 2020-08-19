@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="setUserFirstName" result-type="void" api-version="6.0.0" id="0a904ade-e016-4355-8ffa-54bc48897511" version="0.2.0" allowed-operations="evf" category-name="com.vmware.hol.2121_04">
+  <param n="adUser" t="AD:User"/>
+  <param n="firstName" t="string"/>
+  <script encoded="false"><![CDATA[System.log("Set Firstname for " +adUser.accountName+ " to " +firstName);
+
+adUser.setAttribute("givenName", firstName);
+
+]]></script>
+</dunes-script-module>

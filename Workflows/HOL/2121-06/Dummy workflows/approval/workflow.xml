@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd" root-name="item1" object-name="workflow:name=generic" id="4d6b22b8-8157-46a1-9429-1e1350dbb553" version="0.0.0" api-version="6.0.0" allowed-operations="evf" restartMode="1" resumeFromFailedMode="0">
+  <display-name><![CDATA[approval]]></display-name>
+  <position y="50.0" x="100.0"/>
+  <attrib name="approved" type="boolean" read-only="false">
+    <value encoded="n"><![CDATA[false]]></value>
+  </attrib>
+  <attrib name="reason" type="string" read-only="false">
+    <value encoded="n"><![CDATA[]]></value>
+  </attrib>
+  <workflow-item name="item0" type="end" end-mode="0">
+    <position y="45.40909090909091" x="384.5"/>
+  </workflow-item>
+  <workflow-item name="item1" out-name="item0" type="input">
+    <display-name><![CDATA[User interaction]]></display-name>
+    <in-binding>
+      <bind name="security.group" type="LdapGroup" explicitly-not-bound="true" export-name="NULL">
+        <description><![CDATA[Any user member of this security group will be authorized to answer this 'Input']]></description>
+      </bind>
+      <bind name="security.assignees" type="Array/LdapUser" explicitly-not-bound="true" export-name="NULL">
+        <description><![CDATA[Any user member of this array will be authorized to answer this 'Input']]></description>
+      </bind>
+      <bind name="security.assignee.groups" type="Array/LdapGroup" explicitly-not-bound="true" export-name="NULL">
+        <description><![CDATA[Any user member of any group in this array will be authorized to answer this 'Input']]></description>
+      </bind>
+      <bind name="timeout.date" type="Date" explicitly-not-bound="true" export-name="NULL">
+        <description><![CDATA[If not null, this input item will wait until date and will continue workflow execution.]]></description>
+      </bind>
+    </in-binding>
+    <out-binding>
+      <bind name="approved" type="boolean" export-name="approved"/>
+      <bind name="reason" type="string" export-name="reason"/>
+    </out-binding>
+    <presentation>
+      <p-param name="approved">
+        <desc><![CDATA[approved]]></desc>
+      </p-param>
+      <p-param name="reason">
+        <desc><![CDATA[reason]]></desc>
+      </p-param>
+    </presentation>
+    <position y="55.40909090909091" x="204.5"/>
+  </workflow-item>
+  <presentation/>
+</workflow>

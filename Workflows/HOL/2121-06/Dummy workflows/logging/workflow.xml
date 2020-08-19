@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd" root-name="item1" object-name="workflow:name=generic" id="dc86e9c1-510a-427a-b40a-b13a5d9052b6" version="0.0.0" api-version="6.0.0" allowed-operations="evf" restartMode="1" resumeFromFailedMode="0">
+  <display-name><![CDATA[logging]]></display-name>
+  <position y="50.0" x="100.0"/>
+  <workflow-item name="item0" type="end" end-mode="0">
+    <position y="45.40909090909091" x="384.5"/>
+  </workflow-item>
+  <workflow-item name="item1" out-name="item0" type="task">
+    <display-name><![CDATA[Scriptable task]]></display-name>
+    <script encoded="false"><![CDATA[System.log("If you only knew the power of the dark side. Obi-Wan never told you what happened to your father.");
+System.log("He told me enough! He told me you killed him.");
+System.warn("No. I am your father.");
+System.error("No. No. That's not true! That's impossible!");
+System.warn("Search your feelings. You know it to be true.");
+System.error("No! No! No!");
+System.log("Luke. You can destroy the Emperor. He has foreseen this. It is \
+your destiny. Join me, and we can rule the galaxy as father and son. \
+Come with me. It's the only way.");]]></script>
+    <in-binding/>
+    <out-binding/>
+    <position y="55.40909090909091" x="204.5"/>
+  </workflow-item>
+  <presentation/>
+</workflow>

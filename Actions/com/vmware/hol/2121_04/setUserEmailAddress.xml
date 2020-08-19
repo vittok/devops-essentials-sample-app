@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="setUserEmailAddress" result-type="void" api-version="6.0.0" id="3d4f4d73-7825-4707-84c9-38688cbab111" version="0.2.0" allowed-operations="evf" category-name="com.vmware.hol.2121_04">
+  <param n="adUser" t="AD:User"/>
+  <param n="emailAddress" t="string"/>
+  <script encoded="false"><![CDATA[System.log("Set Email for " +adUser.accountName+ "to " +emailAddress);
+
+adUser.setAttribute("mail", emailAddress);
+]]></script>
+</dunes-script-module>

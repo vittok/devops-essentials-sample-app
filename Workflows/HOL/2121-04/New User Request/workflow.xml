@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd" root-name="item1" object-name="workflow:name=generic" id="adc5f2d2-8bdd-4b15-8553-cbb7bc53f813" version="1.1.0" api-version="6.0.0" allowed-operations="evf" editor-version="2.0" restartMode="1" resumeFromFailedMode="0">
+  <display-name><![CDATA[New User Request]]></display-name>
+  <position y="50.0" x="60.0"/>
+  <input>
+    <param name="accountName" type="string"/>
+    <param name="password" type="SecureString"/>
+    <param name="domainName" type="string"/>
+    <param name="displayName" type="string"/>
+    <param name="ouContainer" type="AD:OrganizationalUnit"/>
+    <param name="changePasswordAtNextLogon" type="boolean"/>
+    <param name="emailAddress" type="string"/>
+    <param name="confirmPassword" type="SecureString"/>
+    <param name="firstName" type="string"/>
+    <param name="lastName" type="string"/>
+  </input>
+  <output>
+    <param name="newUser" type="AD:User"/>
+  </output>
+  <attrib name="err_0" type="string" read-only="false">
+    <value encoded="n"><![CDATA[]]></value>
+  </attrib>
+  <attrib name="newADUser" type="AD:User" read-only="false">
+    <value encoded="n"><![CDATA[]]></value>
+  </attrib>
+  <workflow-item name="item0" type="end" end-mode="0">
+    <in-binding/>
+    <position y="50.0" x="1080.0"/>
+  </workflow-item>
+  <workflow-item name="item1" out-name="item8" catch-name="item3" throw-bind-name="err_0" type="link" linked-workflow-id="1E8180808080808080808080808080808E80808001270557368849c62c352aa82">
+    <display-name><![CDATA[Create a user with a password in an organizational unit]]></display-name>
+    <in-binding>
+      <bind name="accountName" type="string" export-name="accountName">
+        <description><![CDATA[The account name for the user (without domain information)]]></description>
+      </bind>
+      <bind name="password" type="SecureString" export-name="password">
+        <description><![CDATA[The password to set for the user]]></description>
+      </bind>
+      <bind name="confirmPassword" type="SecureString" export-name="confirmPassword">
+        <description><![CDATA[Confirmation of password]]></description>
+      </bind>
+      <bind name="domainName" type="string" export-name="domainName">
+        <description><![CDATA[The domain name in Win2000 form (john@sample.com : value must be sample.com)]]></description>
+      </bind>
+      <bind name="displayName" type="string" export-name="displayName">
+        <description><![CDATA[The display name of the user]]></description>
+      </bind>
+      <bind name="ouContainer" type="AD:OrganizationalUnit" export-name="ouContainer">
+        <description><![CDATA[Organizational unit in which to put the newly created user]]></description>
+      </bind>
+      <bind name="changePasswordAtNextLogon" type="boolean" export-name="changePasswordAtNextLogon">
+        <description><![CDATA[True if the user must change password at next logon]]></description>
+      </bind>
+    </in-binding>
+    <out-binding>
+      <bind name="newUser" type="AD:User" export-name="newADUser">
+        <description><![CDATA[Newly created user]]></description>
+      </bind>
+    </out-binding>
+    <description><![CDATA[ ]]></description>
+    <position y="60.0" x="140.0"/>
+  </workflow-item>
+  <workflow-item name="item2" out-name="item6" type="task" script-module="com.vmware.hol.2121_04/setUserEmailAddress">
+    <display-name><![CDATA[Set user email address]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+System.getModule("com.vmware.hol.2121_04").setUserEmailAddress(adUser,emailAddress);
+]]></script>
+    <in-binding>
+      <bind name="adUser" type="AD:User" export-name="newADUser"/>
+      <bind name="emailAddress" type="string" export-name="emailAddress"/>
+    </in-binding>
+    <out-binding/>
+    <description><![CDATA[Add a note to the workflow schema.]]></description>
+    <position y="120.0" x="740.0"/>
+  </workflow-item>
+  <workflow-item name="item3" throw-bind-name="err_0" type="end" end-mode="1">
+    <in-binding/>
+    <position y="140.0" x="180.0"/>
+  </workflow-item>
+  <workflow-item name="item4" out-name="item10" type="task" script-module="com.vmware.hol.2121_04/setUserFirstName">
+    <display-name><![CDATA[Set user first name]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+System.getModule("com.vmware.hol.2121_04").setUserFirstName(adUser,firstName);
+]]></script>
+    <in-binding>
+      <bind name="adUser" type="AD:User" export-name="newADUser"/>
+      <bind name="firstName" type="string" export-name="firstName"/>
+    </in-binding>
+    <out-binding/>
+    <description><![CDATA[Add a note to the workflow schema.]]></description>
+    <position y="110.0" x="340.0"/>
+  </workflow-item>
+  <workflow-item name="item5" out-name="item13" type="task" script-module="com.vmware.hol.2121_04/setUserLastName">
+    <display-name><![CDATA[set user last name]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+System.getModule("com.vmware.hol.2121_04").setUserLastName(adUser,lastName);
+]]></script>
+    <in-binding>
+      <bind name="adUser" type="AD:User" export-name="newADUser"/>
+      <bind name="lastName" type="string" export-name="lastName"/>
+    </in-binding>
+    <out-binding/>
+    <description><![CDATA[Add a note to the workflow schema.]]></description>
+    <position y="120.0" x="540.0"/>
+  </workflow-item>
+  <workflow-item name="item6" out-name="item0" type="task">
+    <display-name><![CDATA[Set Return User Object]]></display-name>
+    <script encoded="false"><![CDATA[newUser = newADUser;]]></script>
+    <in-binding>
+      <bind name="newADUser" type="AD:User" export-name="newADUser"/>
+    </in-binding>
+    <out-binding>
+      <bind name="newUser" type="AD:User" export-name="newUser"/>
+    </out-binding>
+    <description><![CDATA[Simple task with custom script capability.]]></description>
+    <position y="60.0" x="900.0"/>
+  </workflow-item>
+  <workflow-item name="item8" out-name="item4" type="custom-condition" alt-out-name="item10">
+    <display-name><![CDATA[First Name check]]></display-name>
+    <script encoded="false"><![CDATA[if(firstName === ""){
+    System.log("Firstname not set");
+ return false;
+} else {
+    return true;
+}]]></script>
+    <in-binding>
+      <bind name="firstName" type="string" export-name="firstName"/>
+    </in-binding>
+    <out-binding/>
+    <description><![CDATA[Custom decision based on a custom script.]]></description>
+    <position y="50.0" x="340.0"/>
+  </workflow-item>
+  <workflow-item name="item10" out-name="item5" type="custom-condition" alt-out-name="item13">
+    <display-name><![CDATA[Last Name Check]]></display-name>
+    <script encoded="false"><![CDATA[if(lastName === ""){
+    System.log("lasttname not set");
+ return false;
+} else {
+    return true;
+}]]></script>
+    <in-binding>
+      <bind name="lastName" type="string" export-name="lastName"/>
+    </in-binding>
+    <out-binding/>
+    <description><![CDATA[Custom decision based on a custom script.]]></description>
+    <position y="50.0" x="540.0"/>
+  </workflow-item>
+  <workflow-item name="item13" out-name="item2" type="custom-condition" alt-out-name="item6">
+    <display-name><![CDATA[Email Check]]></display-name>
+    <script encoded="false"><![CDATA[if(emailAddress === ""){
+    System.log("email not set");
+ return false;
+} else {
+    return true;
+}]]></script>
+    <in-binding>
+      <bind name="emailAddress" type="string" export-name="emailAddress"/>
+    </in-binding>
+    <out-binding/>
+    <description><![CDATA[Custom decision based on a custom script.]]></description>
+    <position y="50.0" x="740.0"/>
+  </workflow-item>
+  <presentation/>
+</workflow>

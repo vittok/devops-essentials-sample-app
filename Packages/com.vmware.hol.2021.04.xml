@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<package>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Workflow?id='adc5f2d2-8bdd-4b15-8553-cbb7bc53f813'&dunesName='Workflow']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Workflow?id='1E8180808080808080808080808080808E80808001270557368849c62c352aa82'&dunesName='Workflow']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Action?id='36818080808080808080808080808080BC80808001270557368849c62c352aa82'&dunesName='Action'&name='getUserFromContainer'&category='com.vmware.library.microsoft.activeDirectory']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Action?id='36818080808080808080808080808080E080808001270557368849c62c352aa82'&dunesName='Action'&name='createUserWithPassword'&category='com.vmware.library.microsoft.activeDirectory']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Action?id='36818080808080808080808080808080DA80808001270557368849c62c352aa82'&dunesName='Action'&name='setChangePasswordAtNextLogon'&category='com.vmware.library.microsoft.activeDirectory']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Action?id='3d4f4d73-7825-4707-84c9-38688cbab111'&dunesName='Action'&name='setUserEmailAddress'&category='com.vmware.hol.2121_04']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Action?id='0a904ade-e016-4355-8ffa-54bc48897511'&dunesName='Action'&name='setUserFirstName'&category='com.vmware.hol.2121_04']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Action?id='5b828f02-bfd8-4e5d-8f04-95dcc22ef683'&dunesName='Action'&name='setUserLastName'&category='com.vmware.hol.2121_04']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Workflow?id='BD80808080808080808080808080808053C180800122528313869552e41805bb1'&dunesName='Workflow']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Action?id='8efc8297-a1ab-4734-9f1a-c38e715a0f0d'&dunesName='Action'&name='createSnapshot'&category='com.vmware.library.vc.vm.snapshot']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Action?id='99afccd7-9fcc-4dc2-82b7-586de690364e'&dunesName='Action'&name='vim3WaitTaskEnd'&category='com.vmware.library.vc.basic']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Workflow?id='c6366b68-0cd1-4829-9562-ad694398d949'&dunesName='Workflow']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Action?id='5ccca51f-d5db-4723-bfc3-b1d8ca83893c'&dunesName='Action'&name='getAllSnapshotsOfVM'&category='com.vmware.library.vc.vm.snapshot']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Action?id='53dd9545-c49b-419e-b810-c15a9ab53d9b'&dunesName='Action'&name='getVmByName'&category='com.vmware.hol.2121_04']]></elm>
+<used-plugin name='AD' version='3.0.10' />
+<used-plugin name='VC' version='6.5.0' />
+</package>

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="setUserLastName" result-type="void" api-version="6.0.0" id="5b828f02-bfd8-4e5d-8f04-95dcc22ef683" version="0.2.0" allowed-operations="evf" category-name="com.vmware.hol.2121_04">
+  <param n="adUser" t="AD:User"/>
+  <param n="lastName" t="string"/>
+  <script encoded="false"><![CDATA[System.log("Set Last Name for " +adUser.accountName+ "to " +lastName);
+
+adUser.setAttribute("sn", lastName);
+]]></script>
+</dunes-script-module>

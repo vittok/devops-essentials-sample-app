@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<package>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Workflow?id='a48cb5f3-d3af-4827-af36-e14d443e6040'&dunesName='Workflow']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Workflow?id='4d6b22b8-8157-46a1-9429-1e1350dbb553'&dunesName='Workflow']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Workflow?id='dc86e9c1-510a-427a-b40a-b13a5d9052b6'&dunesName='Workflow']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Workflow?id='95e2dd38-5ce4-4b61-ad96-7c0617c9e2cb'&dunesName='Workflow']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Workflow?id='f62d943a-16a2-46d0-87bf-a5d334b06f14'&dunesName='Workflow']]></elm>
+<elm src-category='null'><![CDATA[dunes://service.dunes.ch/Workflow?id='a103fa84-8e38-49bc-a12f-9c2746cd260e'&dunesName='Workflow']]></elm>
+<used-plugin name='VC' version='6.5.0' />
+</package>

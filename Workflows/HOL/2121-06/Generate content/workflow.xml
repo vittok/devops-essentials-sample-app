@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd" root-name="item7" object-name="workflow:name=generic" id="a48cb5f3-d3af-4827-af36-e14d443e6040" version="0.0.0" api-version="6.0.0" allowed-operations="evf" restartMode="1" resumeFromFailedMode="0">
+  <display-name><![CDATA[Generate content]]></display-name>
+  <position y="50.0" x="100.0"/>
+  <workflow-item name="item0" type="end" end-mode="0">
+    <position y="45.40909090909091" x="1244.5"/>
+  </workflow-item>
+  <workflow-item name="item1" out-name="item2" type="task" launched-workflow-id="4d6b22b8-8157-46a1-9429-1e1350dbb553">
+    <display-name><![CDATA[user interaction]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+var workflowToLaunch = Server.getWorkflowWithId("4d6b22b8-8157-46a1-9429-1e1350dbb553");
+if (workflowToLaunch == null) {
+	throw "Workflow not found";
+}
+
+var workflowParameters = new Properties();
+var wfToken = workflowToLaunch.execute(workflowParameters);]]></script>
+    <in-binding/>
+    <out-binding>
+      <bind name="wfToken" type="WorkflowToken" export-name="NULL">
+        <description><![CDATA[Workflow execution token]]></description>
+      </bind>
+    </out-binding>
+    <position y="55.40909090909091" x="364.5"/>
+  </workflow-item>
+  <workflow-item name="item2" out-name="item3" type="task" launched-workflow-id="dc86e9c1-510a-427a-b40a-b13a5d9052b6">
+    <display-name><![CDATA[logging]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+var workflowToLaunch = Server.getWorkflowWithId("dc86e9c1-510a-427a-b40a-b13a5d9052b6");
+if (workflowToLaunch == null) {
+	throw "Workflow not found";
+}
+
+var workflowParameters = new Properties();
+var wfToken = workflowToLaunch.execute(workflowParameters);]]></script>
+    <in-binding/>
+    <out-binding>
+      <bind name="wfToken" type="WorkflowToken" export-name="NULL">
+        <description><![CDATA[Workflow execution token]]></description>
+      </bind>
+    </out-binding>
+    <position y="55.40909090909091" x="504.5"/>
+  </workflow-item>
+  <workflow-item name="item3" out-name="item4" type="task" launched-workflow-id="95e2dd38-5ce4-4b61-ad96-7c0617c9e2cb">
+    <display-name><![CDATA[failure]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+var workflowToLaunch = Server.getWorkflowWithId("95e2dd38-5ce4-4b61-ad96-7c0617c9e2cb");
+if (workflowToLaunch == null) {
+	throw "Workflow not found";
+}
+
+var workflowParameters = new Properties();
+var wfToken = workflowToLaunch.execute(workflowParameters);]]></script>
+    <in-binding/>
+    <out-binding>
+      <bind name="wfToken" type="WorkflowToken" export-name="NULL">
+        <description><![CDATA[Workflow execution token]]></description>
+      </bind>
+    </out-binding>
+    <position y="55.40909090909091" x="644.5"/>
+  </workflow-item>
+  <workflow-item name="item4" out-name="item5" type="task" launched-workflow-id="f62d943a-16a2-46d0-87bf-a5d334b06f14">
+    <display-name><![CDATA[nested failure]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+var workflowToLaunch = Server.getWorkflowWithId("f62d943a-16a2-46d0-87bf-a5d334b06f14");
+if (workflowToLaunch == null) {
+	throw "Workflow not found";
+}
+
+var workflowParameters = new Properties();
+var wfToken = workflowToLaunch.execute(workflowParameters);]]></script>
+    <in-binding/>
+    <out-binding>
+      <bind name="wfToken" type="WorkflowToken" export-name="NULL">
+        <description><![CDATA[Workflow execution token]]></description>
+      </bind>
+    </out-binding>
+    <position y="55.40909090909091" x="784.5"/>
+  </workflow-item>
+  <workflow-item name="item5" out-name="item6" type="task" launched-workflow-id="4d6b22b8-8157-46a1-9429-1e1350dbb553">
+    <display-name><![CDATA[user interaction]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+var workflowToLaunch = Server.getWorkflowWithId("4d6b22b8-8157-46a1-9429-1e1350dbb553");
+if (workflowToLaunch == null) {
+	throw "Workflow not found";
+}
+
+var workflowParameters = new Properties();
+var wfToken = workflowToLaunch.execute(workflowParameters);]]></script>
+    <in-binding/>
+    <out-binding>
+      <bind name="wfToken" type="WorkflowToken" export-name="NULL">
+        <description><![CDATA[Workflow execution token]]></description>
+      </bind>
+    </out-binding>
+    <position y="55.40909090909091" x="924.5"/>
+  </workflow-item>
+  <workflow-item name="item7" out-name="item1" type="task" launched-workflow-id="f62d943a-16a2-46d0-87bf-a5d334b06f14">
+    <display-name><![CDATA[nested failure]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+var workflowToLaunch = Server.getWorkflowWithId("f62d943a-16a2-46d0-87bf-a5d334b06f14");
+if (workflowToLaunch == null) {
+	throw "Workflow not found";
+}
+
+var workflowParameters = new Properties();
+var wfToken = workflowToLaunch.execute(workflowParameters);]]></script>
+    <in-binding/>
+    <out-binding>
+      <bind name="wfToken" type="WorkflowToken" export-name="NULL">
+        <description><![CDATA[Workflow execution token]]></description>
+      </bind>
+    </out-binding>
+    <position y="55.90909090909091" x="225.0"/>
+  </workflow-item>
+  <workflow-item name="item6" out-name="item0" type="task" launched-workflow-id="dc86e9c1-510a-427a-b40a-b13a5d9052b6">
+    <display-name><![CDATA[logging]]></display-name>
+    <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+var workflowToLaunch = Server.getWorkflowWithId("dc86e9c1-510a-427a-b40a-b13a5d9052b6");
+if (workflowToLaunch == null) {
+	throw "Workflow not found";
+}
+
+var workflowParameters = new Properties();
+var wfToken = workflowToLaunch.execute(workflowParameters);]]></script>
+    <in-binding/>
+    <out-binding>
+      <bind name="wfToken" type="WorkflowToken" export-name="NULL">
+        <description><![CDATA[Workflow execution token]]></description>
+      </bind>
+    </out-binding>
+    <position y="55.40909090909091" x="1064.5"/>
+  </workflow-item>
+  <presentation/>
+</workflow>
